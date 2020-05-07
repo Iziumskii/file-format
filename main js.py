@@ -1,5 +1,4 @@
 import json
-from pprint import pprint
 from collections import Counter
 
 with open("newsafr.json", encoding='utf-8') as js:
@@ -17,11 +16,4 @@ for word in news_list:
 
 news_list2.sort()
 
-c = Counter(news_list2).most_common(10)
-print(c)
-
-
-
-
-
-#print(news_str)
+print(Counter(news_list2).most_common(10))

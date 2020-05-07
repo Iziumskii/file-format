@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as ET
-from pprint import pprint
 from collections import Counter
 
 parser = ET.XMLParser(encoding='utf-8')
@@ -20,5 +19,4 @@ for word in news_list:
 
 news_list2.sort()
 
-c = Counter(news_list2).most_common(10)
-print(c)
+print(Counter(news_list2).most_common(10))
