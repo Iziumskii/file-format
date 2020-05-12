@@ -1,19 +1,13 @@
 import json
-from collections import Counter
+import showtopnews
 
 with open("newsafr.json", encoding='utf-8') as js:
     json_data = json.load(js)
 
-news_list = []
 js_dict = json_data["rss"]["channel"]["items"]
+
+news_list = []
 for news in js_dict:
     news_list = news_list + str(news['description']).split()
 
-news_list2 = []
-for word in news_list:
-    if len(word) > 6:
-        news_list2.append(word)
-
-news_list2.sort()
-
-print(Counter(news_list2).most_common(10))
+showtopnews.show_top_10_news(news_list)
